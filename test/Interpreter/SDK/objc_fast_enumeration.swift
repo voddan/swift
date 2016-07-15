@@ -107,7 +107,7 @@ class X : CustomStringConvertible {
 // CHECK: X(2)
 // CHECK: X(1)
 var a3 = [X(3), X(2), X(1)]
-var nsa3 = (a3._buffer._asCocoaArray() as AnyObject) as! NSArray
+var nsa3: NSArray = a3._bridgeToObjectiveC()
 for x: AnyObject in nsa3 {
   print(x.description!)
 }
